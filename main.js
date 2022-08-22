@@ -5,6 +5,8 @@
 // @author       Waro
 // @match        https://farmrpg.com/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=farmrpg.com
+// @downloadURL  https://raw.githubusercontent.com/war0/frpg-extention/main/main.js
+// @updateURL    https://raw.githubusercontent.com/war0/frpg-extention/main/main.js
 // ==/UserScript==
 
 (function() {
