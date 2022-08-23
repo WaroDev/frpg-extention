@@ -6,7 +6,7 @@ First of all you need of course Tampermonkey to be installed as a browser extens
 
 After you successfully installed the browser extension you need to copy the link to the "raw" main.js file of this repository: https://raw.githubusercontent.com/war0/frpg-extention/main/main.js
 Next step is to open up Tampermonkey and create a new userscript. You don't really need to type anything in there, just hit save and it should allow you to go to the settings tab. Paste the already copied URL into the update URL field and make sure you also enable updates via activating the checkbox. Hit save and you are almost done. The only thing left is that you go back to usercript overview (installed userscripts), mark your new script and choose to update marked scripts. This should import this FRPG extension and also rename the script for you. 
-Make sure you periodically update the script to always have the newest version installed.
+Make sure you periodically update the script to always have the newest version installed.  
 ![image](https://user-images.githubusercontent.com/35682065/186091254-aa750470-f702-4e63-b93d-5f6cafa774ce.png)  
   
 ## Feature #1 - Chat Customizing
