@@ -45,7 +45,7 @@ if (page.name == 'register') {
         ...
         ...
 ```
-We can access those files directly by putting them into the URL after "https:///farmrpg.com/", e.g. "https:///farmrpg.com/js/market.js". After opening and reading some of the files you will recognize an always present "$.ajax()" function call which fires HTTP GET/POST requests at a given URL with optional parameters. The targeted URL is always the "worker.php" which, as the name supposes, handles almost everything the users do. To control the behavior of the worker there are parameters in the URL, first of is always the "go" parameter e.g. "worker.php?go=unlockinv". This value of this parameter is mostly defined as "method". Here is some code of js/market.js to show you what I mean.
+We can access those files directly by putting them into the URL after "https:///farmrpg.com/", e.g. "https:///farmrpg.com/js/market.js". After opening and reading some of the files you will recognize an always present "$.ajax()" function call which fires HTTP GET/POST requests at a given URL with optional parameters. The targeted URL is always the "worker.php" which, as the name supposes, handles almost everything the users do. To control the behavior of the worker there are parameters in the URL, first of is always the "go" parameter e.g. "worker.php?go=unlockinv". The value of this parameter (like "unlockinv") is, if not directly written into the URL string, defined in a "method" variable. Here is some code of js/market.js to show you what I mean.
 ```
 $$(".unlockbtn").click(function(e) { 
 
