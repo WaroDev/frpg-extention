@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         FarmRPG - Extension by Waro
-// @version      0.01
+// @version      0.12.1
 // @description  An extension for the game 'Farm RPG' which adds a lot of different features 
 // @author       Waro
 // @match        https://farmrpg.com/*
