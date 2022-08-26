@@ -13,6 +13,83 @@
     'use strict';
     
     console.log('Starting FRPG extension...');
+    
+    
+    
+    const css_class = "ext-menu-text";
+    const widthMenu = "50px";
+    let showMenuText = false;
+
+    let newCSS = document.createElement('style');
+    document.head.appendChild(newCSS);
+    let sheet = newCSS.sheet;
+    var styles = `.${css_class} {`;
+    styles += 'display: none';
+    styles += '}';
+    sheet.insertRule(styles, 0);
+
+    let menu = document.querySelector(".panel.panel-left.panel-cover");
+    const oldMenuWidth = `${menu.offsetWidth}px`;
+    menu.style.width = widthMenu;
+
+    let mainview = document.querySelector(".view-main");
+    mainview.style.width = `calc(100% - ${widthMenu})`;
+
+    let menuRight = document.querySelector(".navbar .right");
+    let btn = document.createElement("button");
+    btn.innerHTML = "&nbsp;";
+    btn.style.background = "none";
+    btn.style.border = "none";
+    btn.style.backgroundImage = "url(data:image/svg+xml;charset=utf-8;base64,PHN2ZyBzdHlsZT0iY29sb3I6IHdoaXRlIiBoZWlnaHQ9IjMycHgiIGlkPSJMYXllcl8xIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAzMiAzMiIgd2lkdGg9IjMycHgiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxwYXRoIGQ9Ik00LDEwaDI0YzEuMTA0LDAsMi0wLjg5NiwyLTJzLTAuODk2LTItMi0ySDRDMi44OTYsNiwyLDYuODk2LDIsOFMyLjg5NiwxMCw0LDEweiBNMjgsMTRINGMtMS4xMDQsMC0yLDAuODk2LTIsMiBzMC44OTYsMiwyLDJoMjRjMS4xMDQsMCwyLTAuODk2LDItMlMyOS4xMDQsMTQsMjgsMTR6IE0yOCwyMkg0Yy0xLjEwNCwwLTIsMC44OTYtMiwyczAuODk2LDIsMiwyaDI0YzEuMTA0LDAsMi0wLjg5NiwyLTIgUzI5LjEwNCwyMiwyOCwyMnoiIGZpbGw9IndoaXRlIj48L3BhdGg+PC9zdmc+)";
+    btn.style.backgroundRepeat = "no-repeat";
+    btn.style.backgroundSize = "cover";
+    btn.style.position = "relative";
+    btn.style.right = "10px";
+    btn.style.cursor = "pointer";
+    btn.onclick = function(e) {
+        toggleMenuText();
+    }
+    menuRight.appendChild(btn);
+
+    Array.from(document.querySelectorAll(".fa.fa-fw")).map(elm => elm = elm.parentElement).forEach(elm => {
+        elm.parentElement.style.backgroundImage = "none";  // remove arrow
+
+        let parts = elm.innerHTML.split("</i>");
+        parts[0] = parts[0] + "</i>";
+        parts[1] = `<span class="${css_class}">${parts[1]}</span>`;
+        elm.innerHTML = parts.join('');
+    });
+
+    function toggleMenuText() {
+        if (showMenuText) {
+            sheet.cssRules[0].style.display = "none";
+            menu.style.width = widthMenu;
+            mainview.style.width = `calc(100% - ${widthMenu})`;
+            showMenuText = false;
+        }
+        else {
+            sheet.cssRules[0].style.display = "initial";
+            menu.style.width = oldMenuWidth;
+            mainview.style.width = `calc(100% - ${oldMenuWidth})`;
+            showMenuText = true;
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
     const elmChat = document.querySelector("#desktopchatpanel");
     const elmViews = document.querySelector(".views");
