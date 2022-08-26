@@ -14,6 +14,10 @@
     
     console.log('Starting FRPG extension...');
     
+    const elmChat = document.querySelector("#desktopchatpanel");
+    const elmViews = document.querySelector(".views");
+    
+    
     
     
     const css_class = "ext-menu-text";
@@ -90,9 +94,6 @@
     
     
     
-
-    const elmChat = document.querySelector("#desktopchatpanel");
-    const elmViews = document.querySelector(".views");
 
     const bgcolor = "bgcolor";
     const bgurl = "bgurl";
@@ -311,6 +312,26 @@
             localStorage.removeItem(param);
         });
         reload();
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    if (location.href.indexOf("script=onlychat") !== -1 ) {
+        document.title = "Farm RPG - Only Chat";
+
+        // remove other views
+        elmViews.remove();
+
+        // make chat fullscreen
+        elmChat.style.left = "0px";
+        elmChat.style.width = "100%";
+        elmChat.style.display = "block";
     }
     
     console.log('Extension fully loaded!');
